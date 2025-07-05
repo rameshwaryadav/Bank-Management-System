@@ -7,13 +7,7 @@ A simple yet professional web-based bank management system built using Python, F
 ### 🚀 Live Demo & Video Walkthrough
 
 ें)*
--   **YouTube Video:** [**Watch Project Demo**](https://youtube.com/shorts/qTQpbjPq76U?feature=shared) *(यहाँ अपना YouTube वीडियो लिंक डालें)*
-
----
-
-![ProBank Dashboard](./Review.jpg)
-
----
+-   **YouTube Video:** [**Watch Project Demo**](https://youtube.com/shorts/qTQpbjPq76U?feature=shared) 
 
 ## Key Features
 
@@ -43,7 +37,10 @@ ProBank_WebApp/
 ├── Review.jpg
 ├── requirements.txt
 ├── static/
+
 └── templates/
+![ProBank Dashboard](./Review.jpg)
+
 ### 🧑‍💻 Author & Connect
 
 This project was crafted with passion by **Rameshwar Yadav**. Feel free to connect!
