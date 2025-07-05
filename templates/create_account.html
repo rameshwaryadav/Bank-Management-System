@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="mb-4">नया बैंक खाता बनाएं</h1>
+<div class="card">
+    <div class="card-body">
+        <form method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">पूरा नाम</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">ईमेल पता</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="account_type" class="form-label">खाते का प्रकार</label>
+                <select class="form-select" id="account_type" name="account_type" required>
+                    <option value="Savings">बचत खाता (Savings)</option>
+                    <option value="Current">चालू खाता (Current)</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="initial_deposit" class="form-label">प्रारंभिक जमा (₹)</label>
+                <input type="number" step="0.01" class="form-control" id="initial_deposit" name="initial_deposit" required min="0">
+            </div>
+            <button type="submit" class="btn btn-success">खाता बनाएं</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

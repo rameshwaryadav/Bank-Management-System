@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="mb-4">बैंक खाता बंद करें</h1>
+<div class="card border-danger">
+    <div class="card-header bg-danger text-white">
+        चेतावनी
+    </div>
+    <div class="card-body">
+        <p class="card-text">यह क्रिया स्थायी है और इसे पूर्ववत नहीं किया जा सकता। कृपया सुनिश्चित करें कि आप सही खाता बंद कर रहे हैं।</p>
+        <form method="POST" onsubmit="return confirm('क्या आप वाकई इस खाते को बंद करना चाहते हैं?');">
+            <div class="mb-3">
+                <label for="account_id" class="form-label">खाता संख्या</label>
+                <input type="number" class="form-control" id="account_id" name="account_id" required>
+            </div>
+            <button type="submit" class="btn btn-danger">खाता स्थायी रूप से बंद करें</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

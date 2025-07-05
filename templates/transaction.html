@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="mb-4">पैसे जमा करें / निकालें</h1>
+<div class="card">
+    <div class="card-body">
+        <form method="POST">
+            <div class="mb-3">
+                <label for="account_id" class="form-label">खाता संख्या</label>
+                <input type="number" class="form-control" id="account_id" name="account_id" required>
+            </div>
+            <div class="mb-3">
+                <label for="transaction_type" class="form-label">लेन-देन का प्रकार</label>
+                <select class="form-select" id="transaction_type" name="transaction_type" required>
+                    <option value="deposit">जमा करें (Deposit)</option>
+                    <option value="withdraw">निकालें (Withdraw)</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="amount" class="form-label">राशि (₹)</label>
+                <input type="number" step="0.01" class="form-control" id="amount" name="amount" required min="0.01">
+            </div>
+            <button type="submit" class="btn btn-primary">लेन-देन पूरा करें</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

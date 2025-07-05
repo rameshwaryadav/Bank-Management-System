@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="mb-4">बैंक डैशबोर्ड</h1>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">कुल खाते</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ total_accounts }}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">कुल शेष राशि</div>
+            <div class="card-body">
+                <h5 class="card-title">₹{{ "{:,.2f}".format(total_balance) }}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mb-3">सभी खाते</h3>
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>खाता संख्या</th>
+                <th>ग्राहक का नाम</th>
+                <th>ईमेल</th>
+                <th>खाता प्रकार</th>
+                <th>शेष राशि (₹)</th>
+                <th>विवरण देखें</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for account in accounts %}
+            <tr>
+                <td>{{ account.id }}</td>
+                <td>{{ account.name }}</td>
+                <td>{{ account.email }}</td>
+                <td>{{ account.account_type }}</td>
+                <td>{{ "{:,.2f}".format(account.balance) }}</td>
+                <td><a href="{{ url_for('account_details', account_id=account.id) }}" class="btn btn-sm btn-info">देखें</a></td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6" class="text-center">अभी कोई खाता नहीं है।</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

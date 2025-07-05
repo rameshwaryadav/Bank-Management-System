@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="mb-4">खाते का विवरण</h1>
+<div class="card">
+    <div class="card-header">
+        <h4>खाता संख्या: {{ account.id }}</h4>
+    </div>
+    <div class="card-body">
+        <p><strong>ग्राहक का नाम:</strong> {{ account.name }}</p>
+        <p><strong>ईमेल:</strong> {{ account.email }}</p>
+        <p><strong>खाते का प्रकार:</strong> {{ account.account_type }}</p>
+        <p><strong>वर्तमान शेष राशि:</strong> <span class="fw-bold fs-5 text-success">₹{{ "{:,.2f}".format(account.balance) }}</span></p>
+        <p><strong>खाता बनाने की तिथि:</strong> {{ account.created_at.strftime('%d-%m-%Y %H:%M:%S') }}</p>
+    </div>
+    <div class="card-footer">
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">डैशबोर्ड पर वापस जाएं</a>
+    </div>
+</div>
+{% endblock %}
